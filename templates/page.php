@@ -13,5 +13,6 @@ return  "<!DOCTYPE html>
          </head>
          <body>
          $pageData->content
+         $pageData->css
          </body>
          </html>";
