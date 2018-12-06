@@ -1,0 +1,8 @@
+/* code for layout.css */
+h1{
+    color: red;
+}
+/* removing bullet dots from list */
+ul{
+    list-style-type: none;
+}
