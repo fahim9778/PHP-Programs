@@ -6,7 +6,8 @@
  * Time: 7:07 PM
  */
 // code for uploading images
-$fileIsUploaded = isset($_GET['new-image']);    // check if file is uploaded via upload-form
+include_once "classes/Uploader.class.php";
+$fileIsUploaded = isset($_POST['new-image']);    // check if file is uploaded via upload-form
 if($fileIsUploaded)
     $output = upload();    // calling function 'upload'
 else
@@ -16,7 +17,14 @@ return $output;
 //new function to control upload mechanism
 function upload()
 {
-    $out = "<pre>print_r($_FILES, true)</pre>";
-
+    $uploader = new Uploader("image-data");     // creating new Uploader class' object
+    $uploader->saveIn("img");   // setting 'img' as the folder name
+    $fileUploaded = $uploader->save();  // attempting to save
+    if($fileUploaded)
+    {
+        $out = "<h1>File Uploaded successfully</h1>";
+    }
+    else
+        $out = "<h1>Something went wrong</h1>";
     return $out;
 }

@@ -7,7 +7,7 @@
  */
 // Form to upload images
 return "<h1>Upload New Images</h1>
-<form method='get' action='index.php?page=upload' enctype='multipart/form-data'>
+<form method='post' action='index.php?page=upload' enctype='multipart/form-data'>
     <lebel>Find an image to upload</lebel>
     <input type='file' name='image-data' accept='image/jpeg, image/png, image/gif'>
     <input type='submit' name='new-image' value='Upload'>
