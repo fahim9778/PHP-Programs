@@ -5,6 +5,7 @@
  * Date: 22-Nov-18
  * Time: 7:06 PM
  */
+//full code to show gallery
 return showImages(); //function to show image gallery
 
 function showImages()
@@ -24,7 +25,7 @@ function showImages()
         $fileInfo = new Finfo(FILEINFO_MIME_TYPE);      // return mime type ala mimetype extension
         $mimeType = $fileInfo->file($src);
 
-        if($mimeType == 'image/jpeg')        // if the file is of image/jpg
+        if($mimeType == 'image/jpeg' || $mimeType == 'image/png' || $mimeType == 'image/gif' || $mimeType == 'image/tiff')  // if the file is of possible one of these images
         {
             $out .= "<li><img src= '$src' </li>";   // only then add it to the list
         }
