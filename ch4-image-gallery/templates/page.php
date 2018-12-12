@@ -10,9 +10,11 @@
              <head>
              <title>$pageData->title</title> 
              <meta http-equiv='Content-Type' content='test/html; charset=utf-8'/>
+             <meta name='viewport' content='width=device-width, initial-scale=1'>
+             $pageData->css
              </head>
              <body>
              $pageData->content
-             $pageData->css
+             $pageData->scriptElements
              </body>
              </html>";

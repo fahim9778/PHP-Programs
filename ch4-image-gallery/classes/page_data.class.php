@@ -10,10 +10,20 @@ class page_data{
     public $content = "";
     public $css = "";
     public $embeddedCSS = "";
+    public $scriptElements = "";
 
     //function to add css to specific pages
     public function addCSS($href)
     {
         $this->css .= "<link href=$href rel='stylesheet' />";
+    }
+
+    /**
+     * function to add JS scripts in HTML pages
+     * @param $src string : where the JS source is kept
+     */
+    public function addScript($src)
+    {
+        $this->scriptElements .= "<script src ='$src'></script>";
     }
 }

@@ -6,6 +6,6 @@
  * Time: 6:30 PM
  */
 return "<nav>
-   <a href='index.php?page=gallery'>Gallery</a>
-    <a href='index.php?page=upload'>Upload a new image</a>
+   <a href='index.php?page=gallery' class='button'>Gallery</a>
+    <a href='index.php?page=upload' class='button'>Upload a new image</a>
 </nav>"; // code for navigation
