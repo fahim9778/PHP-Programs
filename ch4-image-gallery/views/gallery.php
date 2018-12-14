@@ -27,7 +27,7 @@ function showImages()
 
         if($mimeType == 'image/jpeg' || $mimeType == 'image/png' || $mimeType == 'image/gif' || $mimeType == 'image/tiff')  // if the file is of possible one of these images
         {
-            $out .= "<li><img src= '$src' </li>";   // only then add it to the list
+            $out .= "<li><a href='$src' data-lightbox='mygallery' data-title='$fileName'><img src= '$src' ></a></li>";   // only then add it to the list with lightbox-data property
         }
 
         $filesInFolder->next();     // now move to the next file in the 'img' folder

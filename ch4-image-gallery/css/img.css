@@ -1,12 +1,13 @@
 /* stylesheet to decorate image galley */
-img {
-    display: block; /* display in center */
-    margin: auto;
+li img {
+    display: inline-table; /* display in center */
+    margin: 1%;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
-    max-width: 75%; /* scaling to 50% of the original image */
-    height: auto; /* Responsive Design */
+    max-width: 10rem; /* scaling to 50% of the original image */
+    height: 10rem; /* Responsive Design */
+    float: left;
 }
 
 img:hover {

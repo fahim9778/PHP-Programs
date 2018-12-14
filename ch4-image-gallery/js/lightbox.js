@@ -1,5 +1,5 @@
 //complete code listing for lightbox.js
-window.console.log("Hello from Lightbox Javascript");
+/*window.console.log("Hello from Lightbox Javascript");
 
 // function to initialize lightbox object
 function init()
@@ -51,4 +51,4 @@ function prepareThumbs()
     }
 }
 
-document.addEventListener("DOMContentLoaded", init, false);
+document.addEventListener("DOMContentLoaded", init, false);*/

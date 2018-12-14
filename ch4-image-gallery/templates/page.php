@@ -8,6 +8,7 @@
     return  "<!DOCTYPE html> 
              <html>
              <head>
+             <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"favicon.ico\" />
              <title>$pageData->title</title> 
              <meta http-equiv='Content-Type' content='test/html; charset=utf-8'/>
              <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -16,5 +17,6 @@
              <body>
              $pageData->content
              $pageData->scriptElements
+             <footer><center>© 2018 testPHPme. Some Rights Reserved</center></footer>
              </body>
              </html>";

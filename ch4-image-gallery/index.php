@@ -18,7 +18,10 @@ $pageData = new page_data(); // (new) declaring via custom class 'page_data' fro
 $pageData->addCSS('css/layout.css');    // adding css for layout from 'css' folder
 $pageData->addCSS('css/navigation.css'); //adding css for navigation from 'css' folder
 $pageData->addCSS('css/img.css');   //adding css for image gallery from 'css' folder
-$pageData->addScript('js/lightbox.js'); //adding Javascript from 'js' folder
+//$pageData->addScript('js/lightbox.js'); //adding Javascript from 'js' folder
+//$pageData->addScript('js/lightbox2.js');
+$pageData->addCSS('css/lightbox.css');  ////adding css for image gallery from 'css' folder
+$pageData->addScript('js/lightbox-plus-jquery.js'); //adding Javascript from 'js' folder
 $pageData->title = "Dynamic Image Gallery";  // setting title name;
 $pageData->content = include_once "views/navigation.php"; // setting content to page_data() class object
 
