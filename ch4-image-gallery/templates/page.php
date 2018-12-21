@@ -15,8 +15,8 @@
              $pageData->css
              </head>
              <body>
-             $pageData->content
              $pageData->scriptElements
-             <footer><center>© 2018 testPHPme. Some Rights Reserved</center></footer>
+             $pageData->content
+             $pageData->footer
              </body>
              </html>";

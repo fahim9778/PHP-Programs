@@ -44,6 +44,7 @@ li.lightbox{
     left: 10%;
 }
 
-footer{
+#footer{
     clear: both;  /*prevents from occurring after the images instead of bootom*/
+    /*display: grid;*/
 }

@@ -11,6 +11,7 @@ class page_data{
     public $css = "";
     public $embeddedCSS = "";
     public $scriptElements = "";
+    public $footer = "<div id='footer'><center>©2018 testPHPme. Some rights reserved</center></div>";
 
     //function to add css to specific pages
     public function addCSS($href)
