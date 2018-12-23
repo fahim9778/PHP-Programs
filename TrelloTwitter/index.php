@@ -27,7 +27,7 @@ $getOldLink = "<!DOCTYPE html>    <! -- getting old link (e.g.: https://twitter.
 <div id='input-form'>
 Enter Twitter Tweet link from Trello SUMO 64 boards and Press 'ENTER' to Redirect
 <form action='index.php' method='get' target='_blank'>
-    <input type='text' name='oldLink' placeholder=example: https://twitter.com/statuses/123456789' >
+    <input type='text' name='oldLink' placeholder='example: https://twitter.com/statuses/123456789' >
     <input type='submit' name='submit' value='GO'>
     <input type='reset' value='Clear Field'>
 </form>
@@ -52,7 +52,7 @@ img {
   text-align: center;
 }
 
-h2,h3
+a,h2,h3
 {
   text-align: center;
 }
@@ -106,7 +106,7 @@ if(isset($_GET['submit'])) {
     /* now https://twitter.com/statuses/SomeRandomTweetID converted to
     https://twitter.com/user/statuses/SomeRandomTweetID */
 
-    echo "<a href='$newLink' target='_blank'>$newLink</a>";
+    /*echo "<a href='$newLink' target='_blank'>$newLink</a>";*/
     header("location:$newLink");    // redirecting to the converted correct page.
     exit();
 }
