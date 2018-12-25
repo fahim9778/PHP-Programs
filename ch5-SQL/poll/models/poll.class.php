@@ -9,12 +9,52 @@
 // 'poll.class' class definition
 class poll
 {
+    /**
+     * @var PDO
+     * this injects PDO statements to the db
+     */
+
+    private $db;
+
+    public function __construct($dbconnection)  // declaring constructor for poll class
+    {
+        $this->db = $dbconnection;
+    }
+
+    /**
+     * @return mixed fetches playground database's info
+     */
     public function getPollData()
     {
-        $pollData = new stdClass();
+        /*$pollData = new stdClass();
         $pollData->pollQuestion = "Just testing....";
         $pollData->yes = 0;
-        $pollData->no = 0;
+        $pollData->no = 0;*/
+
+        //the actual SQL statement
+        $sql = "SELECT * FROM poll WHERE poll_id = 1";
+        //Use the PDO connection to create a PDOStatement object
+        $statement = $this->db->prepare($sql);
+        // execute SQL statement
+        $statement->execute();
+        //retrieve the first row of the table
+        $pollData = $statement->fetchObject();
         return $pollData;
+
+    }
+
+    /**
+     * @param $input int indicates casted vote 'yes' or 'no'
+     * @return mixed updates poll results
+     */
+    public function updatePoll($input)
+    {
+        $updatePollResultSQL = "";
+        if ($input == 'yes')
+            $updatePollResultSQL = "UPDATE poll SET yes = yes + 1 WHERE poll_id = 1;";
+        elseif  ($input == 'no')
+            $updatePollResultSQL = "UPDATE poll SET no = no + 1 WHERE poll_id = 1;";
+        $updateStatement = $this->db->prepare($updatePollResultSQL);
+        $updateStatement->execute();
     }
 }
