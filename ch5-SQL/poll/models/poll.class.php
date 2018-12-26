@@ -24,7 +24,7 @@ class poll
     /**
      * @return mixed fetches playground database's info
      */
-    public function getPollData()
+    public function getPollQuestion()
     {
         /*$pollData = new stdClass();
         $pollData->pollQuestion = "Just testing....";
@@ -32,7 +32,7 @@ class poll
         $pollData->no = 0;*/
 
         //the actual SQL statement
-        $sql = "SELECT * FROM poll WHERE poll_id = 1";
+        $sql = "SELECT pollQuestion FROM poll WHERE poll_id = 1";
         //Use the PDO connection to create a PDOStatement object
         $statement = $this->db->prepare($sql);
         // execute SQL statement
@@ -51,10 +51,29 @@ class poll
     {
         $updatePollResultSQL = "";
         if ($input == 'yes')
-            $updatePollResultSQL = "UPDATE poll SET yes = yes + 1 WHERE poll_id = 1;";
+            $updatePollResultSQL = "UPDATE poll SET yes = yes + 1 WHERE poll_id = 1";
         elseif  ($input == 'no')
-            $updatePollResultSQL = "UPDATE poll SET no = no + 1 WHERE poll_id = 1;";
+            $updatePollResultSQL = "UPDATE poll SET no = no + 1 WHERE poll_id = 1";
         $updateStatement = $this->db->prepare($updatePollResultSQL);
-        $updateStatement->execute();
+        if($updateStatement->execute() == false)
+        {
+          return false;
+        }
+        else
+            return true;
+
+    }
+
+    public function showPollData()
+    {
+        //the actual SQL statement
+        $sql = "SELECT yes, no FROM poll WHERE poll_id = 1";
+        //Use the PDO connection to create a PDOStatement object
+        $statement = $this->db->prepare($sql);
+        // execute SQL statement
+        $statement->execute();
+        //retrieve the first row of the table
+        $pollData = $statement->fetchObject();
+        return $pollData;
     }
 }
